@@ -1,0 +1,10 @@
+.navbar-style{
+    background-color:sienna !important;
+}
+
+.custom-login-txt{
+    color: white !important;
+    background-color: sienna;
+    font-size: 20px !important;
+    padding: 20px;
+}
