@@ -2,8 +2,8 @@ import React, { useState, useEffect , useContext} from "react";
 import { UserContext } from "./UserContext";
 
 let Login = (props) => {
-  var [email, setEmail] = useState("abc@test.com");
-  var [password, setPassword] = useState("Password@123");
+  var [email, setEmail] = useState("scott@test.com");
+  var [password, setPassword] = useState("Scott123");
   let userContext = useContext(UserContext);
 
   let [dirty, setDirty] = useState({
@@ -111,6 +111,8 @@ let Login = (props) => {
         //Status code is 200
         let responseBody = await response.json();
         if (responseBody.length > 0) {
+          console.log("inside login class : responseBody : ", responseBody);
+
           userContext.setUser({
             ...userContext.user,
             isLoggedIn:true,
@@ -118,7 +120,9 @@ let Login = (props) => {
             currentUserId:responseBody[0].id
 
           })
+          console.log("inside login class : userID : ", responseBody[0].id)
           props.history.replace("/dashboard");
+
         } else {
           setLoginMessage(
             <span className="text-danger">So user! Invalid Login, please try again</span>

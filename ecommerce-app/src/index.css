@@ -8,3 +8,16 @@
     font-size: 20px !important;
     padding: 20px;
 }
+
+.header{
+    background-color: white;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+
+}
+
+.nav-link.active{
+    color:white;
+    border-bottom: 2px sold blue;
+}
