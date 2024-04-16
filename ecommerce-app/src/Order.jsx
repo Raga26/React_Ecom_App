@@ -6,6 +6,25 @@ function Order(props) {
       <div className="card-body">
         <h6>
           <i className="fa fa-arrow-right"></i> {props.productName}
+          {props.isPaymentCompleted == false?
+          (
+          <div className="float-right">
+            <button className="btn btn-sm btn-info mr-2"
+             onClick={ () => {
+              props.onBuyNowClick(props.orderId , props.userId , props.productId , props.quantity);
+             }}
+            >
+              <i className="fa fa-truck"></i>Buy Now
+            </button>
+
+            <button className="btn btn-sm btn-danger mr-2">
+              <i className="fa fa-trash"></i>
+            </button>
+          </div>
+          )
+          :
+          ("")}
+          
         </h6>
 
         <table className="table table-sm table-borderless mt-1">
@@ -25,4 +44,4 @@ function Order(props) {
   );
 }
 
-export default Order;
+export default React.memo(Order);
