@@ -18,3 +18,26 @@ export const OrdersService = {
     },
   };
   
+  export const BrandsService = {
+    fetchBrands: () => {
+      return fetch("http://localhost:5000/brands", {
+        method: "GET",
+      });
+    },
+    getBrandByBrandId: (brands, brandId) => {
+      // console.log("inside service method : getBrandByBrandId : ", brands , " : " , brandId );
+      // console.log("matching : ", brands.find((brand) => brand.id == brandId))
+      return brands.find((brand) => brand.id == brandId);
+    },
+  };
+  
+  export const CategoriesService = {
+    fetchCategories: () => {
+      return fetch("http://localhost:5000/categories", {
+        method: "GET",
+      });
+    },
+    getCategoryByCategoryId: (categories, categoryId) => {
+      return categories.find((category) => category.id == categoryId);
+    },
+  };

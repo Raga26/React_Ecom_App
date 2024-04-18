@@ -79,6 +79,20 @@ let NavBar = () => {
           ) : (
             ""
           )}
+
+        {userContext.user.isLoggedIn ? (
+            <li>
+              <NavLink
+                className="nav-link"
+                to="/store"
+                activeClassName="active"
+              >
+                <i className="fa fa-shopping-bag"></i>Store
+              </NavLink>
+            </li>
+          ) : (
+            ""
+          )}
         </ul>
 
         {/* right box starts */}
